@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css-E3-GoodFastCheap.css">
+</head>
+<body>
+<!-- Rectangular switch -->
+
+<label class="switch">
+    <input type="checkbox" id="good" name="a" onclick="handle(this.id)">
+    <span class="slider"></span>
+</label>
+<br>
+<br>
+<!-- Rounded switch -->
+<label class="switch">
+    <input type="checkbox" id="fast" name="b" onclick="handle(this.id)">
+    <span class="slider round"></span>
+</label>
+<br>
+<br>
+<label class="switch">
+    <input type="checkbox" id="cheap" name="c" onclick="handle(this.id)">
+    <span class="slider"></span>
+</label>
+<script>
+    function handle(IDvalue) {
+        let good = document.getElementById('good').checked;
+        let fast = document.getElementById('fast').checked;
+        let cheap = document.getElementById('cheap').checked;
+        let a=good && fast && cheap;
+        if (a==true) {
+            switch (IDvalue) {
+                case 'good':
+                    document.getElementById('cheap').checked=false;
+                    break;
+                case 'fast':
+                    document.getElementById('good').checked=false;
+                    break;
+                case 'cheap':
+                    document.getElementById('fast').checked=false;
+                    break;
+            }
+
+        }
+
+    }
+
+</script>
+</body>
+</html>
